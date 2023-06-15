@@ -7,19 +7,15 @@
  * Return: 0 if successful
  */
 
-int main()
+int main(void)
+
 {
-printf("Size of char: %zu byte(s)\n", sizeof(char));
-printf("Size of int: %zu byte(s)\n", sizeof(int));
-printf("Size of float: %zu byte(s)\n", sizeof(float));
-printf("Size of double: %zu byte(s)\n", sizeof(double));
-printf("Size of short: %zu byte(s)\n", sizeof(short));
-printf("Size of long: %zu byte(s)\n", sizeof(long));
-printf("Size of long long: %zu byte(s)\n", sizeof(long long));
-printf("Size of unsigned int: %zu byte(s)\n", sizeof(unsigned int));
-printf("Size of unsigned long: %zu byte(s)\n", sizeof(unsigned long));
-printf("Size of unsigned long long: %zu byte(s)\n", sizeof(unsigned long long));
-printf("Size of void*: %zu byte(s)\n", sizeof(void*));
+
+printf("Size of a char: %u byte(s)\n", (unsigned int)sizeof(char));
+printf("Size of an int: %u byte(s)\n", (unsigned int)sizeof(int));
+printf("Size of a long int: %u byte(s)\n", (unsigned int)sizeof(long));
+printf("Size of a long long int: %u byte(s)\n", (unsigned int)sizeof(long long));
+printf("Size of a float: %u byte(s)\n", (unsigned int)sizeof(float));
 return 0;
 
 }
