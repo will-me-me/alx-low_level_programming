@@ -1,8 +1,14 @@
 #include <stdio.h>
 
-/* this function print a specified message using pus */
+/**
+ * main - This the main entry point of our funcction
+ * the fuction prints a specifiv message and 
+ *
+ * Return: 0 if succesful
+ */
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle\n");
-   	return 0;
-} 
+    puts("\"Programming is like building a multilingual puzzle\n");
+    return (0);
+}
+
