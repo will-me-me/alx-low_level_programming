@@ -18,7 +18,7 @@ int main(void)
 
 		if (myNumber != 9)
 		{
-			putchar(',');
+			/*putchar(',');*/
 
 			putchar(',');
 
