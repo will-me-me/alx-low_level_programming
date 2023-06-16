@@ -6,3 +6,5 @@ The 4-print_alphabt.c prints all the aphabets excepts q and e
 The 5-print_numbers.c prints all the number between 0 and 10
 The 6-print_numberz.c prints number between 0-10
 The 7-print_tebahpla.c print the alphabets in a reverse manner
+The 8-print_base16.c prints number of base 16
+The 9-print_comb.c prits all posible combination of single digits number
