@@ -16,10 +16,10 @@ int main(void)
 
 	/* a for loop to to loop from a to z */
 	for (alphabetic_letter = 'a'; alphabetic_letter <= 'z'; alphabetic_letter++)
-		putchar(alphabetic_letter)
+		putchar(alphabetic_letter);
 
-	putchar('\n')
+	putchar('\n');
 
-	return (0)
+	return (0);
 
 }
