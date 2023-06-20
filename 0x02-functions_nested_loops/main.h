@@ -27,7 +27,7 @@ int print_alphabet(void)
 	{
 		_putchar(lowerCase);
 	}
-	_putcha('\n');
+	_putchar('\n');
 }
 
 #endif /* MAIN_H */
