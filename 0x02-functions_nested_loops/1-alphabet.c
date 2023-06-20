@@ -5,10 +5,13 @@
  *
  * Return: Always 0.
  */
-int main(void)
+void print_alphabet(void)
 {
-	/* calling the function */
-	print_alphabet();
-
-	return (0);
+	char lowerCase;
+	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
+	{
+		_putchar(lowerCase);
+	}
+	_putchar(lowerCase);
+	return (0);	
 }

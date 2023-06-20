@@ -32,16 +32,5 @@ int print_putchar(void)
  * On error, returns -1 and sets errno appropriately.
  */
 void print_alphabet(void)
-{
-	char lowerCase;
-
-	/*looping over the alphabets*/
-	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
-	{
-		_putchar(lowerCase);
-	}
-	_putchar('\n');
-	return (0);
-}
 
 #endif /* MAIN_H */
