@@ -10,25 +10,41 @@
  */
 
 int main(void)
+int main(void)
 {
-	int count;
-	unsigned int num1 = 1, num2 = 2;
+    unsigned long int i;
+    unsigned long int prev1 = 1;
+    unsigned long int prev2 = 2;
+    unsigned long int l = 1000000000;
+    unsigned long int prev1_1;
+    unsigned long int prev1_2;
+    unsigned long int prev2_1;
+    unsigned long int prev2_2;
 
-	printf("%u, %u", num1, num2);
-	
-	for (count = 3; count <= 98; count++)
-	{
-		unsigned int nextTerm = num1 + num2;
+    printf("%lu", prev1);
 
-		printf(", %u", nextTerm);
+    for (i = 1; i < 91; i++)
+    {
+        printf(", %lu", prev2);
+        prev2 += prev1;
+        prev1 = prev2 - prev1;
+    }
 
+    prev1_1 = (prev1 / l);
+    prev1_2 = (prev1 % l);
+    prev2_1 = (prev2 / l);
+    prev2_2 = (prev2 % l);
 
-		num1 = num2;
-		num2 = nextTerm;
-	}
-
-	printf("\n");
-
-	return (0);
+    for (i = 92; i < 99; ++i)
+    {
+        printf(", %lu", prev2_1 + (prev2_2 / l));
+        printf("%lu", prev2_2 % l);
+        prev2_1 = prev2_1 + prev1_1;
+        prev1_1 = prev2_1 - prev1_1;
+        prev2_2 = prev2_2 + prev1_2;
+        prev1_2 = prev2_2 - prev1_2;
+    }
+    
+    printf("\n");
+    return 0;
 }
-
