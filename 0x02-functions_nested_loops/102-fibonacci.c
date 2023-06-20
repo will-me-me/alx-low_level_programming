@@ -8,22 +8,26 @@
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-	int num1 = 0, num2 = 1, sum, count;	
-	/* Print the first two Fibonacci numbers */
-	printf("%d, %d", num1, num2);
+	int counter;
+	unsigned long num1 = 0, num2 = 1, sum;
 
-	/* Generate and print the remaining 48 Fibonacci numbers */
-	for (count = 3; count <= 50; count++)
+
+	for (counter = 0; counter < 50; counter++)
 	{
 		sum = num1 + num2;
-		printf(", %d", sum);
+		printf("%lu", sum);
+
 		num1 = num2;
 		num2 = sum;
-	}
 
-	printf("\n");
+		if (counter == 49)
+			printf("\n");
+		else
+			printf(", ");
+	}
 
 	return (0);
 }
