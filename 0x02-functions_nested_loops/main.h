@@ -18,4 +18,16 @@ int print_putchar(void)
 	return (0);
 }
 
+int print_alphabet(void)
+{
+	char lowerCase;
+
+	/*looping over the alphabets*/
+	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
+	{
+		_putchar(lowerCase);
+	}
+	_putcha('\n');
+}
+
 #endif /* MAIN_H */
