@@ -18,7 +18,7 @@ int print_putchar(void)
 	return (0);
 }
 
-int print_alphabet(void)
+void print_alphabet(void)
 {
 	char lowerCase;
 
@@ -28,6 +28,7 @@ int print_alphabet(void)
 		_putchar(lowerCase);
 	}
 	_putchar('\n');
+	return (0);
 }
 
 #endif /* MAIN_H */
