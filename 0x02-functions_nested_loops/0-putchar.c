@@ -1,22 +1,11 @@
-#include <unistd.h>
-
-/**
- * _putchar - Writes a character to the standard output
- * @c: The character to be written
- *
- * Return: On success, returns the character written.
- * On error, returns -1 and sets errno appropriately.
- */
-int _putchar(char c)
-{
-return (write(1, &c, 1));
-}
+#include "main.h"
 
 /**
  * main - Entry point
  *
- * Description: Prints "_putchar" followed by a
- * new line using the _putchar function
+ * Description: Prints "_putchar" followed by a new line using 
+ * 
+ * the _putchar function
  *
  * Return: 0
  */
@@ -34,4 +23,3 @@ _putchar('\n');
 
 return (0);
 }
-
