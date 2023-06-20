@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_times_table - Prints the n times table, starting with 0
+ * print_number - Prints the n times table, starting with 0
  *
  * Description: Prints the n times table, starting with 0
  * @n: The number to generate the times table for
