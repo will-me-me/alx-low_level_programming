@@ -10,7 +10,6 @@
  */
 
 int main(void)
-int main(void)
 {
     unsigned long int i;
     unsigned long int prev1 = 1;
