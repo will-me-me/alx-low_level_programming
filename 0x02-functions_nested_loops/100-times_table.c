@@ -16,6 +16,7 @@ void print_number(int n)
  * print_times_table - Prints the n times table, starting with 0
  * @n: The number to generate the times table for
  */
+
 void print_times_table(int n)
 {
 	int i, j;
@@ -28,6 +29,7 @@ void print_times_table(int n)
 		for (j = 0; j <= n; j++)
 		{
 			int result = i * j;
+
 			if (j > 0)
 			{
 				_putchar(',');
