@@ -12,14 +12,16 @@
 int main(void)
 {
 	int count;
-	unsigned int num1 = 1, num2 = 2, nextTerm;
+	unsigned int num1 = 1, num2 = 2;
 
 	printf("%u, %u", num1, num2);
 	
 	for (count = 3; count <= 96; count++)
 	{
-		nextTerm = num1 + num2;
+		unsigned int nextTerm = num1 + num2;
 		printf(", %u", nextTerm);
+
+
 		num1 = num2;
 		num2 = nextTerm;
 	}
