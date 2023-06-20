@@ -2,11 +2,14 @@
 
 /**
  * print_times_table - Prints the n times table, starting with 0
+ *
  * Description: Prints the n times table, starting with 0
  * @n: The number to generate the times table for
  */
+
 void print_number(int n)
 {
+	/*a recursive function that takes in an in */
 	if (n / 10 != 0)
 		print_number(n / 10);
 
