@@ -10,7 +10,7 @@
  * Return: On success, returns the character written.
  * On error, returns -1 and sets errno appropriately.
  */
-int _putchar()
+int print_putchar()
 {
 	write(1, "_putchar\n", 9);
 

@@ -11,7 +11,7 @@
 int main(void)
 {
 	/* calling the funcfion here */
-	_putchar();
+	print_putchar();
 
 	return (0);
 }
