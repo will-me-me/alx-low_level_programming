@@ -1,46 +1,18 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <unistd.h>
+int _putchar(char c);
+void print_alphabet(void);
+void print_alphabet_x10(void);
+int _islower(int c);
+int _isalpha(int c);
+int print_sign(int n);
+int _abs(int);
+int print_last_digit(int);
+void jack_bauer(void);
+void times_table(void);
+int add(int, int);
+void print_to_98(int n);
+void print_times_table(int n);
 
-/**
- * _putchar - Writes a character to the standard output (stdout)
- * @c: The character to be written
- *
- * Return: On success, returns the character written.
- * On error, returns -1 and sets errno appropriately.
- */
-int print_putchar(void)
-{
-	/* printing the putchar */
-	write(1, "_putchar\n", 9);
-
-	return (0);
-}
-#endif /* MAIN_H */
-
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <unistd.h>
-
-/**
- * _putchar - Writes a character to the standard output (stdout)
- * @c: The character to be written
- *
- * Return: On success, returns the character written.
- * On error, returns -1 and sets errno appropriately.
- */
-void print_alphabet(void)
-{
-	char lowerCase;
-
-	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
-	{
-		_putchar(lowerCase);
-	}
-	_putchar('\n');
-}
-			
-
-#endif /* MAIN_H */
+#endif
