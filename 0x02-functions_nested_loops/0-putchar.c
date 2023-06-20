@@ -11,7 +11,7 @@
 int main(void)
 {
 	/* calling the funcfion here */
-	_putchart();
+	_putchar();
 
 	return (0);
 }
