@@ -1,35 +1,32 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_remaining_days - prints how many days are left in a year
- * @month: month in int format
- * @day: day of the month
- * @year: year
- * Return: void
+ * largest_number - returns the largest number
+ * @a: first integer
+ * @b: second integer
+ * @c: third integer
+ * Return: Largest number
  */
 
-void print_remaining_days(int month, int day, int year)
+int largest_number(int a, int b, int c)
 {
-	if ((year % 100 == 0 && year % 400 == 0) || (year % 4 == 0))
+	int largest;
+
+	if (a > b && a > c)
 	{
-		if (month > 2 && day >= 60)
-		{
-			day++;
-		}
-		printf("Day of the year: %d\n", day);
-		printf("Remaining days: %d\n", 366 - day);
+		largest = a;
+	}
+	else if (b > c && b > a)
+	{
+		largest = b;
+	}
+	else if (c > b)
+	{
+		largest = c;
 	}
 	else
 	{
-		if (month == 2 && day == 60)
-		{
-			printf("Invalid date: %02d/%02d/%04d\n", month, day - 31, year);
-		}
-		else
-		{
-			printf("Day of the year: %d\n", day);
-			printf("Remaining days: %d\n", 365 - day);
-		}
+		largest = b;
 	}
+	return (largest);
 }
