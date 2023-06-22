@@ -6,3 +6,4 @@ The 3-print_numbers.c prints all the numver in range of 0 9
 The 4-print_most_numbers.c prints all the number is rangeof 0 to 9 in exception of 2 and 4
 The 5-more_numbers.c prints number in 0 to 14 tens times
 The 6-print_line.c printins a straight line
+The 7-print_diagonal.c prints all the diagonals 
