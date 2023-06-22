@@ -10,3 +10,4 @@ The 7-print_diagonal.c prints all the diagonals
 The 8-print_square.c prints squre 
 The 9-fizz_buzz.c checks if the number is a multiple of 3 and 5 or both
 The 10-print_triangle.c prints a trianle using #
+The 100-prime_factor.c prints all the prime numbers
