@@ -19,4 +19,6 @@ Pointers, arrays and strings
 
 10) The 9-strcpy.c copies a tring to a given src
 
- 
+11) The 101-keygen.c  file generates random passwords
+
+12) The 100-atoi.c defines a function that convert a string to an integer 
