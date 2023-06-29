@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point of the program
+ *
+ * Description: Prints the value of a[2] after assigning it 98
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
@@ -8,7 +14,6 @@ int main(void)
 
 	a[2] = 1024;
 	p = &n;
-
 	/*
 	 * Write your line of code here...
 	 * Remember:
