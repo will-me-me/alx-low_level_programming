@@ -15,18 +15,3 @@ int _strlen_recursion(char *s)
 
 	return (1 + _strlen_recursion(s + 1));
 }
-
-/**
- * main - entry point of the program
- *
- * Return: always 0 (success)
- */
-int main(void)
-{
-	int n;
-
-	n = _strlen_recursion("Corbin Coleman");
-	printf("%d\n", n);
-	return (0);
-}
-
