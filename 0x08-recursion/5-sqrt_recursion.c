@@ -16,7 +16,7 @@ int _sqrt_recursion(int n)
 		return (n);
 	}
 
-	return (sqrt_helper(n, 1, n));
+	return sqrt_helper(n, 1, n);
 }
 
 /**
@@ -46,6 +46,6 @@ int sqrt_helper(int n, int start, int end)
 		return (sqrt_helper(n, start, mid - 1));
 	}
 
-	return (sqrt_helper(n, mid + 1, end));
+	return sqrt_helper(n, mid + 1, end);
 }
 
