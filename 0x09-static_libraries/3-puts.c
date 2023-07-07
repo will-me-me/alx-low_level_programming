@@ -1,30 +1,15 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- *_strspn - return length of string that matches values
- *@s: string to search
- *@accept: target matches
- *Return: number of bytes consecutively matched
+ * _puts - prints a string
+ * @str: the character value
+ * Return: returns 0 on successful execution
  */
-
-unsigned int _strspn(char *s, char *accept)
+void _puts(char *str)
 {
-	int i = 0, j;
-	int matches = 0;
-
-	while (s[i] != '\0')
+	while (*str != '\0')
 	{
-		for (j = 0; accept[j] != '\0'; j++)
-		{
-			if (s[i] == accept[j])
-			{
-				matches++;
-				break;
-			}
-			if (accept[j + 1] == '\0' && s[i] != accept[j])
-				return (matches);
-		}
-		i++;
+		_putchar(*str++);
 	}
-	return (matches);
+	_putchar('\n');
 }
