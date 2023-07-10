@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 /**
  * strtow - splits a string into words
@@ -20,7 +19,7 @@ char **strtow(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (isalpha(str[i]) && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
 			word_count++;
 	}
 
@@ -31,10 +30,10 @@ char **strtow(char *str)
 	k = 0;
 	for (i = 0; i < word_count; i++)
 	{
-		while (!isalpha(str[k]) && str[k] != '\0')
+		while (str[k] == ' ')
 			k++;
 		j = k;
-		while (isalpha(str[j]))
+		while (str[j] != ' ' && str[j] != '\0')
 			j++;
 
 		p[i] = malloc(sizeof(char) * (j - k + 1));
