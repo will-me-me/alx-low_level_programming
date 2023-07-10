@@ -11,20 +11,20 @@
  */
 static int count_words(char *str)
 {
-    int count = 0;
-    int i;
-    int len = strlen(str);
+	int count = 0;
+	int i;
+	int len = strlen(str);
 
-    if (len > 0 && str[0] != ' ')
-        count++;
+	if (len > 0 && str[0] != ' ')
+		count++;
 
-    for (i = 0; i < len - 1; i++)
-    {
-        if (str[i] == ' ' && str[i + 1] != ' ')
-            count++;
-    }
+	for (i = 0; i < len - 1; i++)
+	{
+		if (str[i] == ' ' && str[i + 1] != ' ')
+			count++;
+	}
 
-    return (count);
+	return (count);
 }
 
 /**
@@ -36,40 +36,40 @@ static int count_words(char *str)
  */
 static char **allocate_words(char *str, int word_count)
 {
-    char **words;
-    int i, j, k;
-    int len;
+	char **words;
+	int i, j, k;
+	int len;
 
-    words = malloc(sizeof(char *) * (word_count + 1));
-    if (words == NULL)
-        return (NULL);
+	words = malloc(sizeof(char *) * (word_count + 1));
+	if (words == NULL)
+		return (NULL);
 
-    k = 0;
-    for (i = 0; i < word_count; i++)
-    {
-        while (str[k] == ' ')
-            k++;
-        j = k;
-        while (str[j] != ' ' && str[j] != '\0')
-            j++;
-        len = j - k;
+	k = 0;
+	for (i = 0; i < word_count; i++)
+	{
+		while (str[k] == ' ')
+			k++;
+		j = k;
+		while (str[j] != ' ' && str[j] != '\0')
+			j++;
+		len = j - k;
 
-        words[i] = malloc(sizeof(char) * (len + 1));
-        if (words[i] == NULL)
-        {
-            for (j = 0; j < i; j++)
-                free(words[j]);
-            free(words);
-            return (NULL);
-        }
+		words[i] = malloc(sizeof(char) * (len + 1));
+		if (words[i] == NULL)
+		{
+			for (j = 0; j < i; j++)
+				free(words[j]);
+			free(words);
+			return (NULL);
+		}
 
-        strncpy(words[i], str + k, len);
-        words[i][len] = '\0';
-        k = j + 1;
-    }
+		strncpy(words[i], str + k, len);
+		words[i][len] = '\0';
+		k = j + 1;
+	}
 
-    words[word_count] = NULL;
-    return (words);
+	words[word_count] = NULL;
+	return (words);
 }
 
 /**
@@ -80,15 +80,15 @@ static char **allocate_words(char *str, int word_count)
  */
 char **strtow(char *str)
 {
-    char **words;
-    int word_count;
+	char **words;
+	int word_count;
 
-    if (str == NULL || *str == '\0')
-        return (NULL);
+	if (str == NULL || *str == '\0')
+		return (NULL);
 
-    word_count = count_words(str);
-    words = allocate_words(str, word_count);
+	word_count = count_words(str);
+	words = allocate_words(str, word_count);
 
-    return (words);
+	return (words);
 }
 
