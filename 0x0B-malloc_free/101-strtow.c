@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 /**
  * strtow - splits a string into words
@@ -10,7 +12,7 @@
  */
 char **strtow(char *str)
 {
-	int i, j = 0, k, l, m = 0, n;
+	int i, j, k, word_count = 0;
 	char **p;
 
 	if (str == NULL || *str == '\0')
@@ -18,36 +20,38 @@ char **strtow(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ')
-			j++;
+		if (isalpha(str[i]) && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+			word_count++;
 	}
 
-	p = malloc(sizeof(char *) * (j + 1));
+	p = malloc(sizeof(char *) * (word_count + 1));
 	if (p == NULL)
 		return (NULL);
 
-	for (k = 0; k < j; k++)
+	k = 0;
+	for (i = 0; i < word_count; i++)
 	{
-		for (l = 0; str[l] != ' '; l++)
-			m++;
+		while (!isalpha(str[k]) && str[k] != '\0')
+			k++;
+		j = k;
+		while (isalpha(str[j]))
+			j++;
 
-		p[k] = malloc(sizeof(char) * (m + 1));
-		if (p[k] == NULL)
+		p[i] = malloc(sizeof(char) * (j - k + 1));
+		if (p[i] == NULL)
 		{
-			for (n = 0; n < k; n++)
-				free(p[n]);
+			for (j = 0; j < i; j++)
+				free(p[j]);
 			free(p);
 			return (NULL);
 		}
 
-		for (m = 0; m < l; m++)
-			p[k][m] = str[m];
-
-		p[k][m] = '\0';
-		str += l + 1;
+		strncpy(p[i], str + k, j - k);
+		p[i][j - k] = '\0';
+		k = j + 1;
 	}
 
-	p[k] = NULL;
+	p[word_count] = NULL;
 	return (p);
 }
 
