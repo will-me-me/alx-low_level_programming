@@ -4,27 +4,40 @@
 #include <string.h>
 
 /**
- * strtow - splits a string into words
- * @str: string to split
+ * count_words - counts the number of words in a string
+ * @str: string to count words from
  *
- * Return: pointer to an array of strings
+ * Return: number of words
  */
-char **strtow(char *str)
+static int count_words(char *str)
 {
-	int i, j, k, word_count = 0;
-	char **p;
-
-	if (str == NULL || *str == '\0')
-		return (NULL);
+	int count = 0;
+	int i;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-			word_count++;
+			count++;
 	}
 
-	p = malloc(sizeof(char *) * (word_count + 1));
-	if (p == NULL)
+	return (count);
+}
+
+/**
+ * allocate_words - allocates memory for words in an array of strings
+ * @str: string to split into words
+ * @word_count: number of words
+ *
+ * Return: pointer to an array of strings
+ */
+static char **allocate_words(char *str, int word_count)
+{
+	char **words;
+	int i, j, k;
+	int len;
+
+	words = malloc(sizeof(char *) * (word_count + 1));
+	if (words == NULL)
 		return (NULL);
 
 	k = 0;
@@ -35,22 +48,43 @@ char **strtow(char *str)
 		j = k;
 		while (str[j] != ' ' && str[j] != '\0')
 			j++;
+		len = j - k;
 
-		p[i] = malloc(sizeof(char) * (j - k + 1));
-		if (p[i] == NULL)
+		words[i] = malloc(sizeof(char) * (len + 1));
+		if (words[i] == NULL)
 		{
 			for (j = 0; j < i; j++)
-				free(p[j]);
-			free(p);
+				free(words[j]);
+			free(words);
 			return (NULL);
 		}
 
-		strncpy(p[i], str + k, j - k);
-		p[i][j - k] = '\0';
+		strncpy(words[i], str + k, len);
+		words[i][len] = '\0';
 		k = j + 1;
 	}
 
-	p[word_count] = NULL;
-	return (p);
+	words[word_count] = NULL;
+	return (words);
+}
+
+/**
+ * strtow - splits a string into words
+ * @str: string to split
+ *
+ * Return: pointer to an array of strings
+ */
+char **strtow(char *str)
+{
+	char **words;
+	int word_count;
+
+	if (str == NULL || *str == '\0')
+		return (NULL);
+
+	word_count = count_words(str);
+	words = allocate_words(str, word_count);
+
+	return (words);
 }
 
