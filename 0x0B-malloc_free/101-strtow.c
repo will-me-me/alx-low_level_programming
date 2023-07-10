@@ -12,7 +12,6 @@ char **strtow(char *str)
 {
 	int i, j = 0, k, l, m = 0, n;
 	char **p;
-	char *s;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
@@ -45,7 +44,7 @@ char **strtow(char *str)
 			p[k][m] = str[m];
 
 		p[k][m] = '\0';
-		s = str + l + 1;
+		str += l + 1;
 	}
 
 	p[k] = NULL;
