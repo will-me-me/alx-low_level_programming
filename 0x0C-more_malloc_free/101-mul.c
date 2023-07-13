@@ -1,20 +1,18 @@
-#include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 /**
- * ExitfromError - Exits from error
- *
- * Return: void
+ * errorExit - Print error message and exit with status 98
  */
-void ExitfromError(void)
+void errorExit(void)
 {
 	printf("Error\n");
 	exit(98);
 }
 
 /**
- * multiplyNumbers - Multiplies two numbers
+ * multiplyNumbers - Multiply two numbers
  * @num1: First number
  * @num2: Second number
  *
@@ -26,44 +24,44 @@ int multiplyNumbers(int num1, int num2)
 }
 
 /**
- * isNumber - Checks if a string is a number
+ * isNumber - Check if a string is composed only of digits
  * @str: String to check
  *
  * Return: 1 if true, 0 if false
  */
 int isNumber(const char *str)
 {
-	int i = 0;
-
-	while (str[i] != '\0')
+	while (*str)
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (!isdigit(*str))
 			return (0);
-		i++;
+		str++;
 	}
 	return (1);
 }
 
 /**
- * main - Multiplies two numbers
- * @argc: Number of arguments
- * @argv: Array of arguments
+ * main - Multiply two positive numbers
+ * @argc: Number of command-line arguments
+ * @argv: Array of command-line arguments
  *
- * Return: 0 if success, 98 if failure
+ * Return: 0 on success, 98 on failure
  */
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
 
 	if (argc != 3)
-		ExitfromError();
+		errorExit();
+
 	if (!isNumber(argv[1]) || !isNumber(argv[2]))
-		ExitfromError();
+		errorExit();
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 
 	result = multiplyNumbers(num1, num2);
+
 	printf("%d\n", result);
 
 	return (0);
