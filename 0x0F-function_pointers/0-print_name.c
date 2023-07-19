@@ -1,5 +1,3 @@
-#include "main.h"
-#include <stdio.h>
 #include <stddef.h>
 #include "function_pointers.h"
 #include <stdlib.h>
