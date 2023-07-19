@@ -4,15 +4,15 @@
 #include <string.h>
 
 /**
- * main - print the result of an operation
+ * main - print the result of a operation
  * @argc: no of arguments
  * @argv: array of arguments
- * Return: 0 always (SUCCESS)
+ * Return: 0 (SUCCESS)
  */
 
 int main(int argc, char **argv)
 {
-	int (*func)(int, int), ans, i, j;
+	int (*func)(int, int), ans, v1, v2;
 
 	if (argc != 4)
 	{
@@ -28,10 +28,10 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	i = atoi(argv[1]);
-	j = atoi(argv[3]);
+	v1 = atoi(argv[1]);
+	v2 = atoi(argv[3]);
 
-	ans = func(i, j);
+	ans = func(v1, v2);
 
 	printf("%d\n", ans);
 
