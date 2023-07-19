@@ -4,14 +4,12 @@
 
 /**
  * get_op_func - selects the correct function to perform the operation
- * @s: operator passed as an argument to the program
- * Return: pointer to the function that corresponds to the operator given
- * as a parameter
+ * @s: operator passed as an argument
+ * Return: pointer to the function that corresponds to the operator
+ * given as a parameter
  */
 int (*get_op_func(char *s))(int, int)
 {
-	int i;
-
 	op_t ops[] = {
 		{"+", op_add},
 		{"-", op_sub},
@@ -20,12 +18,11 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-
-	i = 0;
+	int i = 0;
 
 	while (ops[i].op != NULL)
 	{
-		if (*s == *(ops[i].op) && *(s + 1) == '\0')
+		if (ops[i].op[0] == s[0])
 			return (ops[i].f);
 		i++;
 	}
