@@ -6,7 +6,7 @@
  * Return: Nothing
  */
 
-void exe_bf_main(void)__attribute__((constructor))
+void exe_bf_main(void)__attribute__((constructor));
 
 void exe_bf_main(void)
 {
