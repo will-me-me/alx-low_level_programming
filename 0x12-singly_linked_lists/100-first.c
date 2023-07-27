@@ -1,18 +1,15 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * print_first - Function to be executed before main
- * Prints a message before the main function is executed
+ * exe_bf_main - prints a string before the main function runs
+ * Return: Nothing
  */
-/*void print_first(void) __attribute__ ((constructor));*/
 
-/**
- * print_first - Function to be executed before main
- * Prints a message before the main function is executed
- */
-void print_first(void)
+/*void exe_bf_main(void)__attribute__((constructor))*/
+
+void exe_bf_main(void)
 {
 	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!");
-	printf("\n");
+printf("\n");
 }
-
